@@ -1,4 +1,16 @@
 1. States = rownames(US Arrests)
 Get states names with ‘w’.
+Answer:
+library(data.table)                 
+States_w <-USArrests[USArrests$X %like% "w", ]
+
 Get states names with ‘W’.
+Answer:
+library(data.table)                 
+States_W<-USArrests[USArrests$X %like% "W", ]
+
 2. Prepare a Histogram of the number of characters in each US state.
+library(stringi)
+library(ggplot2)
+USArrests$XCount<-stri_length(USArrests$X)
+hist(USArrests$XCount)
